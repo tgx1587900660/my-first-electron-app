@@ -1,0 +1,102 @@
+p {
+  margin: 0;
+}
+
+body {
+  background-color: #f9f2e7;
+}
+
+/* 标题 */
+h1 {
+  text-align: center;
+  font-size: 60px;
+  color: #477998;
+}
+
+/* 游戏内容容器 */
+.container {
+  position: relative;
+  width: 471px;
+  height: 471px;
+  margin: 0 auto;
+}
+
+/* 游戏获胜信息面板 */
+.game-message {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(69, 133, 136, 0.4);
+  text-align: center;
+}
+
+/* winner 获胜者 */
+.game-message p {
+  margin: 180px 0 40px 0;
+  color: #fff;
+  font-size: 50px;
+}
+
+/* 重新开始游戏按钮 */
+.game-message button {
+  color: #517304;
+  border-color: #517304;
+  width: 110px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* 游戏面板棋盘 */
+.game-board {
+  width: 471px;
+  height: 471px;
+}
+.game-board.x .cell:not(.x):not(.o):hover::before {
+  content: 'X';
+  color: lightgray;
+}
+.game-board.o .cell:not(.x):not(.o):hover::before {
+  content: 'O';
+  color: lightgray;
+}
+
+/* 棋盘 - 行 */
+.row {
+  display: flex;
+}
+.row:last-child .cell {
+  border-bottom: 0;
+}
+
+/* 棋盘 - 单元格 */
+.cell {
+  flex: 1;
+  box-sizing: border-box;
+  width: 157px;
+  height: 157px;
+  line-height: 157px;
+  border-right: 6px solid #546363;
+  border-bottom: 6px solid #546363;
+  text-align: center;
+  cursor: pointer;
+  font-size: 88px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+}
+.cell:last-child {
+  border-right: 0;
+}
+
+/* x 玩家 */
+.cell.x::before {
+  content: 'X';
+  color: #01a8c6;
+}
+/* o 玩家 */
+.cell.o::before {
+  content: 'O';
+  color: #8fbe01;
+}
